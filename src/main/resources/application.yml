@@ -1,0 +1,11 @@
+server:
+  port: 9191
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/registration_db
+    username: kacper
+    password: kacper
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
