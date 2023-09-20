@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6" xmlns="http://www.w3.org/1999/html"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Profile</title>
+</head>
+<body>
+    <h1>Welcome</h1></br>
+    <div sec:authentication="name"></div> <!-- works fine -->
+    <div sec:authentication="principal.authorities"></div> <!-- works fine -->
+    <div sec:authorize="isAuthenticated()" >isAuthenticated() {true}</div> <!-- works fine -->
+    <span th:text="${#authorization.expression('isAuthenticated()')}">authorization.expression('isAuthenticated()')</span> <!-- works fine -->
+
+</body>
+</html>

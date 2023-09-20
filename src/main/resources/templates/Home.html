@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>Moja Strona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            text-decoration: none;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: right;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+        }
+        .user-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 10px; /* Margines między przyciskami */
+        }
+        .user-buttons-left {
+            display: flex;
+            text-decoration: none;
+            gap: 10px; /* Odstęp między przyciskami */
+        }
+        .user-buttons-right {
+            display: flex;
+            text-decoration: none;
+            gap: 10px; /* Odstęp między przyciskami */
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="user-buttons-left">
+        <div sec:authorize="hasAuthority('ADMIN')">
+            <a th:href="@{/users}"><button class="user-button">USERS</button></a>
+        </div>
+    </div>
+    <div class="user-buttons-right">
+        <a href="/profile" class="user-button">PROFILE</a>
+        <a href="/logout" class="user-button">LOGOUT</a>
+    </div>
+</div>
+
+<!-- Tu umieść treść swojej strony -->
+
+</body>
+</html>

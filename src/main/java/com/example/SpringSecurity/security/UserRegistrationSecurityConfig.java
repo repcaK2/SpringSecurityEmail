@@ -29,10 +29,11 @@ public class UserRegistrationSecurityConfig {
                 .hasAnyAuthority("ADMIN")
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/home")
-                .permitAll()
+                .requestMatchers("/home", "/profile")
+                .hasAnyAuthority("USER", "ADMIN")
                 .and()
                 .formLogin()
+                .defaultSuccessUrl("/home")
                 .and()
                 .build();
     }

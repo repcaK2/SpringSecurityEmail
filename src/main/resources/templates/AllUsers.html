@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <style>
+        body{
+            background-color: #a9a6cf;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #a6a1e1; /* Kolor tła dla wierszy parzystych */
+        }
+        tr:nth-child(odd) {
+            background-color: #7367f0; /* Kolor tła dla wierszy nieparzystych */
+        }
+    </style>
+</head>
+<body>
+<h1>User List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>LASTNAME</th>
+        <th>EMAIL</th>
+        <th>ROLE</th>
+        <th>isEnabled</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Poniżej użyj Thymeleaf do dynamicznego wypełnienia danych użytkowników -->
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}">ID</td>
+        <td th:text="${user.firstName}">FIRSTNAME</td>
+        <td th:text="${user.lastName}">LASTNAME</td>
+        <td th:text="${user.email}">EMAIL</td>
+        <td th:text="${user.role}">ROLE</td>
+        <td th:text="${user.isEnabled} ? 'Tak' : 'Nie'">isEnabled</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
