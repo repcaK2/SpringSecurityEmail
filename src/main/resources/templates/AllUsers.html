@@ -4,23 +4,52 @@
     <meta charset="UTF-8">
     <title>User List</title>
     <style>
-        body{
-            background-color: #a9a6cf;
+        body {
+            background-color: black;
+            color: rgb(90, 152, 139);
         }
+
         table {
             border-collapse: collapse;
             width: 100%;
+
         }
+
         th, td {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
         }
+
         tr:nth-child(even) {
-            background-color: #a6a1e1; /* Kolor tła dla wierszy parzystych */
+            background-color: black; /* Kolor tła dla wierszy parzystych */
         }
+
         tr:nth-child(odd) {
-            background-color: #7367f0; /* Kolor tła dla wierszy nieparzystych */
+            background-color: black; /* Kolor tła dla wierszy nieparzystych */
+        }
+
+        .delete-button {
+            background-color: red;
+            width: 100px;
+            height: 40px;
+            border-radius: 15px;
+            color: white;
+            border: none;
+            padding: 0px;
+            cursor: pointer;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        .ActionTH{
+            border-top: black;
+            border-right: black;
+            border-bottom: black;
+            width:120px;
+            text-decoration:none;
+        }
+        .href{
+            text-decoration:none;
         }
     </style>
 </head>
@@ -35,6 +64,7 @@
         <th>EMAIL</th>
         <th>ROLE</th>
         <th>isEnabled</th>
+        <th class="ActionTH"></th> <!-- Dodaj kolumnę dla przycisków usuwania -->
     </tr>
     </thead>
     <tbody>
@@ -46,6 +76,7 @@
         <td th:text="${user.email}">EMAIL</td>
         <td th:text="${user.role}">ROLE</td>
         <td th:text="${user.isEnabled} ? 'Tak' : 'Nie'">isEnabled</td>
+        <td class="ActionTH"><button class="delete-button"><a class="href" th:href="@{/users/delete/{id}(id=${user.id})}">DELETE</a></button></td>
     </tr>
     </tbody>
 </table>

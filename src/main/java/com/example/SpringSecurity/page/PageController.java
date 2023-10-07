@@ -21,4 +21,14 @@ public class PageController {
 		return "Profile";
 	}
 
+	@GetMapping("/login")
+	public String loginPage(){
+		return "Login";
+	}
+
+	@GetMapping("/register")
+	public String registerPage(){
+		return "Register";
+	}
+
 }

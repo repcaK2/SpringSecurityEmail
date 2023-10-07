@@ -24,4 +24,12 @@ public class User {
     private String password;
     private String role;
     private boolean isEnabled = false;
+    private Integer hall;
+
+    @PrePersist
+    public void roleGenerator(){
+        if (this.role == null){
+            this.role = "USER";
+        }
+    }
 }

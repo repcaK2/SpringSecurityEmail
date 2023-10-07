@@ -1,2 +1,5 @@
 Thymeleaf + Spring Security
 https://stackoverflow.com/questions/30788105/spring-security-hasrole-not-working
+
+TASK:
+register user without postman

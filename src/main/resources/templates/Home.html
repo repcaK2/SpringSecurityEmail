@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
-    <title>Moja Strona</title>
+    <title>HOME</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,19 +10,26 @@
             padding: 0;
             background-color: black;
             text-decoration: none;
+            background-image: url("/images/logo.png");
         }
         .header {
-            background-color: #333;
+            background-color: black;
             color: white;
+            margin-top: -100px;
             text-align: right;
             padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             text-decoration: none;
+            border-style: solid;
+            border-color: black;
+            border-bottom-color: rgb(90, 152, 139);
         }
         .user-button {
-            background-color: #007bff;
+            background-color: rgb(90, 152, 139);
+            text-align: center;
+            margin-top:100px;
             color: white;
             border: none;
             border-radius: 5px;
@@ -33,6 +40,7 @@
         }
         .user-buttons-left {
             display: flex;
+            margin-top: 0px;
             text-decoration: none;
             gap: 10px; /* Odstęp między przyciskami */
         }
@@ -40,6 +48,16 @@
             display: flex;
             text-decoration: none;
             gap: 10px; /* Odstęp między przyciskami */
+        }
+        .logo{
+            width:300px;
+            margin-left: 140px;
+            margin-top: 30px;
+        }
+        .h1{
+            color:white;
+            margin-top:-50px;
+            margin-left: 770px;
         }
     </style>
 </head>
@@ -55,6 +73,7 @@
         <a href="/logout" class="user-button">LOGOUT</a>
     </div>
 </div>
+<h1 class="h1">TechNova Solutions</h1>
 
 <!-- Tu umieść treść swojej strony -->
 

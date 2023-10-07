@@ -1,17 +1,45 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6" xmlns="http://www.w3.org/1999/html"
-      xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Your Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUR PROFILE</title>
+    <style>
+        body{
+          color:white;
+          background-color: black;
+        }
+        .header{
+            background-color: black;
+            height: 35px;
+            color: rgb(90, 152, 139);
+            border-style: solid;
+            border-top-color: black;
+            border-left-color: black;
+            border-right-color: black;
+            border-bottom-color: rgb(90, 152, 139);
+        }
+        .name{
+            text-align: center;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .logo{
+            width: 300px;
+            margin-left:780px;
+            margin-top:-80px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome</h1></br>
-    <div sec:authentication="name"></div> <!-- works fine -->
-    <div sec:authentication="principal.authorities"></div> <!-- works fine -->
-    <div sec:authorize="isAuthenticated()" >isAuthenticated() {true}</div> <!-- works fine -->
-    <span th:text="${#authorization.expression('isAuthenticated()')}">authorization.expression('isAuthenticated()')</span> <!-- works fine -->
-
+<div class="header">
+    <a href="/home"><img class="logo" src="/images/logo.png" alt="logo"></a>
+    <div class="name" sec:authentication="name"></div>
+</div>
+<div>
+    <h1>About account</h1></br>
+    <h3>ROLES: </h3></br>
+    <div sec:authentication="principal.authorities"></div></br> <!-- works fine -->
+</div>
 </body>
 </html>

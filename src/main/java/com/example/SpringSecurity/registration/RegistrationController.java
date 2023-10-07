@@ -3,6 +3,7 @@ package com.example.SpringSecurity.registration;
 import com.example.SpringSecurity.event.RegistrationCompleteEvent;
 import com.example.SpringSecurity.registration.token.VerificationToken;
 import com.example.SpringSecurity.registration.token.VerificationTokenRepository;
+import com.example.SpringSecurity.user.RegistrationRequest;
 import com.example.SpringSecurity.user.User;
 import com.example.SpringSecurity.user.UserService;
 import jakarta.servlet.http.HttpServletRequest;
