@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" type="text/css" href="registerStyle.css">
+</head>
+<style>
+    body{
+background-color: black;
+margin: 0;
+padding: 0;
+color:white;
+}
+.main{
+background-color: black;
+width: 600px;
+height: 700px;
+margin:auto;
+margin-top: 100px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-radius: 25px;
+border-style: solid;
+border-color: rgb(90, 152, 139);
+}
+input::placeholder {
+text-align: center;
+}
+.css-input {
+padding: 5px;
+font-size: 22px;
+border-width: 1px;
+border-color: #1b0f0f74;
+background-color: #ffffff;
+color: #000000;
+border-style: solid;
+border-radius: 50px;
+box-shadow: 0px 0px 0px rgba(66,66,66,.0);
+text-shadow: 7px 0px 30px rgba(66,66,66,.62);
+margin-left: 105px;
+}
+.css-input:focus {
+outline:none;
+}
+.header{
+width: 600px;
+height: 20px;
+text-align: center;
+font-size: 56px;
+margin-top: -40px;
+}
+.myButton {
+background:linear-gradient(to bottom, #373737 5%, #373737 100%);
+background-color:#373737;
+border-radius:14px;
+border:1px solid #ffffff;
+display:inline-block;
+cursor:pointer;
+color:#ffffff;
+font-family:Arial;
+font-size:20px;
+padding:11px 52px;
+text-decoration:none;
+text-shadow:0px 1px 0px #2f6627;
+margin-left: 205px;
+}
+.myButton:hover {
+background:linear-gradient(to bottom, rgb(90, 152, 139) 5%, rgb(90, 152, 139) 100%);
+background-color:rgb(90, 152, 139);;
+}
+.myButton:active {
+position:relative;
+top:1px;
+}
+
+.logo{
+margin-top:-50px;
+width: 400px;
+}
+</style>
+<body>
+<div class="main">
+    <form action="/register" method="post">
+        <div class="header">
+            <img src="logo.png" class="logo" alt="logo"></div></br></br></br></br></br></br></br></br></br></br>
+        <div class="param">
+            <input class="css-input" type="text" id="name" name="name" placeholder="name" size="30" required>
+        </div></br>
+        <div class="param">
+            <input class="css-input" type="text" id="lastname" name="lastname" placeholder="lastname" size="30" required>
+        </div></br>
+        <div class="param">
+            <input class="css-input" type="email" id="email" name="email" placeholder="email" size="30" required>
+        </div></br>
+        <div class="param">
+            <input class="css-input" type="password" id="password" name="password" placeholder="password" size="30" required>
+        </div></br></br></br></br></br></br>
+        <button type="submit" class="myButton">Register</button>
+    </form>
+</div>
+</body>
+</html>
