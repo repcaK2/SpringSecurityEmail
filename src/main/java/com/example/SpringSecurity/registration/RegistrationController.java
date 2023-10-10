@@ -20,8 +20,18 @@ public class RegistrationController {
     private final ApplicationEventPublisher publisher;
     private final VerificationTokenRepository tokenRepository;
 
-    @PostMapping
-    public String registerUser(@RequestBody RegistrationRequest registrationRequest, final HttpServletRequest request){
+    @PostMapping("/NewUser")
+    public String registerUser(@RequestBody
+                               @RequestParam("firstName") String firstName,
+                               @RequestParam("lastName") String lastName,
+                               @RequestParam("email") String email,
+                               @RequestParam("password") String password,
+                               final HttpServletRequest request){
+        RegistrationRequest registrationRequest = new RegistrationRequest();
+        registrationRequest.setFirstName(firstName);
+        registrationRequest.setLastName(lastName);
+        registrationRequest.setEmail(email);
+        registrationRequest.setPassword(password);
         User user = userService.registerUser(registrationRequest);
         publisher.publishEvent(new RegistrationCompleteEvent(user, applicationUrl(request)));
         return "Success!  Please, check your email to complete your registration";
@@ -35,10 +45,10 @@ public class RegistrationController {
         }
         String verificationResult = userService.validateToken(token);
         if(verificationResult.equalsIgnoreCase("valid")){
+            String loginLink = "<a href='/login'>Login to your account</a>";
             return "Email verified successfully. Now you can login to your account";
         }
         return "Invalid verification token";
-
     }
 
     public String applicationUrl(HttpServletRequest request){

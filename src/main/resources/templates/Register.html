@@ -81,25 +81,32 @@ top:1px;
 margin-top:-50px;
 width: 400px;
 }
+.OptionAccount{
+text-decoration: underline;
+color: white;
+margin-left: 210px;
+}
 </style>
 <body>
 <div class="main">
-    <form action="/register" method="post">
+    <form action="/register/NewUser" method="post">
         <div class="header">
-            <img src="logo.png" class="logo" alt="logo"></div></br></br></br></br></br></br></br></br></br></br>
+            <img src="/images/logo.png" class="logo" alt="logo">
+        </div></br></br></br></br></br></br></br></br></br></br>
         <div class="param">
-            <input class="css-input" type="text" id="name" name="name" placeholder="name" size="30" required>
+            <input class="css-input" type="text" id="firstName" name="firstName" placeholder="name" size="30" required>
         </div></br>
         <div class="param">
-            <input class="css-input" type="text" id="lastname" name="lastname" placeholder="lastname" size="30" required>
+            <input class="css-input" type="text" id="lastName" name="lastName" placeholder="lastname" size="30" required>
         </div></br>
         <div class="param">
             <input class="css-input" type="email" id="email" name="email" placeholder="email" size="30" required>
         </div></br>
         <div class="param">
             <input class="css-input" type="password" id="password" name="password" placeholder="password" size="30" required>
-        </div></br></br></br></br></br></br>
-        <button type="submit" class="myButton">Register</button>
+        </div></br></br></br></br>
+        <button type="submit" class="myButton">Register</button></br></br>
+        <a class="OptionAccount" href="/login">Already have an account?</a>
     </form>
 </div>
 </body>
